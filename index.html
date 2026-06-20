@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Água Tratada - Saúde para Todos</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eaf6ff;
+color:#333;
+}
+
+header{
+background:#0F4C81;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+header h1{
+font-size:2.5rem;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px;
+}
+
+.gibi{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,.1);
+text-align:center;
+}
+
+.gibi img{
+width:100%;
+max-width:700px;
+height:auto;
+border-radius:10px;
+border:3px solid #ddd;
+}
+
+.botoes{
+margin-top:20px;
+}
+
+button{
+background:#1E88E5;
+color:white;
+border:none;
+padding:12px 25px;
+margin:5px;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#0F4C81;
+}
+
+#contador{
+margin-top:15px;
+font-weight:bold;
+}
+
+.info{
+margin-top:40px;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+
+footer{
+margin-top:40px;
+background:#0F4C81;
+color:white;
+text-align:center;
+padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>💧 Água Tratada - Saúde para Todos</h1>
+<p>Gibi Educativo sobre a Importância da Água Tratada</p>
+</header>
+
+<div class="container">
+
+<div class="gibi">
+
+<h2>📖 Nosso Gibi</h2>
+
+<br>
+
+<img id="pagina" src="pagina1.png.png" alt="Página do Gibi">
+
+<div id="contador">
+Página 1 de 4
+</div>
+
+<div class="botoes">
+<button onclick="anterior()">⬅ Anterior</button>
+<button onclick="proxima()">Próxima ➡</button>
+</div>
+
+</div>
+
+<div class="info">
+<h2>🚰 Importância da Água Tratada</h2>
+
+<p>
+A água tratada é fundamental para a saúde da população.
+Ela passa por processos de limpeza e desinfecção que eliminam
+bactérias, vírus e outras impurezas.
+</p>
+
+<br>
+
+<p>
+O acesso à água tratada reduz doenças, melhora a qualidade de vida
+e contribui para o desenvolvimento das comunidades.
+</p>
+</div>
+
+</div>
+
+<footer>
+Projeto Agrinho 2026 • Água Tratada
+</footer>
+
+<script>
+
+const paginas = [
+"gibi_p1.png",
+"gibi_p2.png",
+"gibi_p3.png",
+"gibi_p4.png",
+"gibi_p5.png",
+"gibi_p6.png",
+"gibi_p7.png",
+"gibi_p8.png",
+"gibi_p9.png",
+"gibi_p10.png"
+];
+let atual = 0;
+
+function atualizar(){
+document.getElementById("pagina").src = paginas[atual];
+document.getElementById("contador").innerHTML =
+"Página " + (atual + 1) + " de " + paginas.length;
+}
+
+function proxima(){
+if(atual < paginas.length - 1){
+atual++;
+atualizar();
+}
+}
+
+function anterior(){
+if(atual > 0){
+atual--;
+atualizar();
+}
+}
+
+window.onload = atualizar;
+
+</script>
+
+</body>
+</html>
