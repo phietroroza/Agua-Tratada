@@ -421,18 +421,14 @@ Ler Gibi
 
 <div class="trabalho">
 
-<h2>🎥 Vídeo Educativo</h2>
+<h2>🎥 Ciclo da Água (Stop Motion)</h2>
 
 <p>
-
-Em breve você poderá assistir um vídeo educativo sobre a água tratada.
-
+Assista ao nosso vídeo em Stop Motion e acompanhe de forma divertida todas as etapas do ciclo da água na natureza.
 </p>
 
-<button disabled>
-
-Em breve
-
+<button onclick="abrirVideo()">
+Assistir Vídeo
 </button>
 
 </div>
@@ -469,7 +465,28 @@ Leia nosso gibi e descubra a importância da água tratada.
 </div>
 
 </section>
+<section id="video" style="display:none;">
 
+<div class="gibi-container">
+
+<h2>🎥 Ciclo da Água (Stop Motion)</h2>
+
+<p>
+Conheça o ciclo da água através de um vídeo produzido em Stop Motion.
+</p>
+
+<video width="100%" controls>
+    <source src="stopmotion.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos.
+</video>
+
+<br><br>
+
+<button onclick="voltarInicio()">🏠 Voltar</button>
+
+</div>
+
+</section>
 <footer>
 
 Projeto Agrinho 2026 • Água Tratada
@@ -527,7 +544,29 @@ atualizar();
 }
 
 }
+function abrirVideo(){
 
+document.getElementById("curiosidades").style.display="none";
+
+document.getElementById("trabalhosArea").style.display="none";
+
+document.querySelector("header").style.display="none";
+
+document.querySelector("nav").style.display="none";
+
+document.getElementById("gibi").style.display="none";
+
+document.getElementById("video").style.display="block";
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
 function abrirGibi(){
 
 document.getElementById("curiosidades").style.display="none";
@@ -564,6 +603,8 @@ document.querySelector("nav").style.display="flex";
 
 document.getElementById("gibi").style.display="none";
 
+document.getElementById("video").style.display="none";
+  
 window.scrollTo({
 
 top:0,
