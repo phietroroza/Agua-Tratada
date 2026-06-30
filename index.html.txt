@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projeto Agrinho 2026 - Água Tratada</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#eef7ff;
+
+}
+
+header{
+
+background:linear-gradient(90deg,#0F4C81,#1E88E5);
+
+color:white;
+
+padding:50px 20px;
+
+text-align:center;
+
+}
+
+header h1{
+
+font-size:45px;
+
+margin-bottom:15px;
+
+}
+
+header p{
+
+font-size:20px;
+
+}
+
+nav{
+
+background:white;
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+padding:18px;
+
+box-shadow:0 3px 10px rgba(0,0,0,.1);
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:#0F4C81;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#1E88E5;
+
+}
+
+section{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:60px 20px;
+
+}
+
+.titulo{
+
+text-align:center;
+
+font-size:34px;
+
+margin-bottom:40px;
+
+color:#0F4C81;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+gap:25px;
+
+}
+
+.card{
+
+background:white;
+
+padding:25px;
+
+border-radius:18px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card h3{
+
+color:#1565C0;
+
+margin-bottom:15px;
+
+}
+
+.card p{
+
+line-height:1.6;
+
+}
+
+.trabalhos{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+
+}
+
+.trabalho{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+
+text-align:center;
+
+}
+
+.trabalho h2{
+
+color:#1565C0;
+
+margin-bottom:15px;
+
+}
+
+.trabalho p{
+
+margin-bottom:25px;
+
+}
+
+button{
+
+background:#1976D2;
+
+color:white;
+
+padding:14px 28px;
+
+border:none;
+
+border-radius:30px;
+
+cursor:pointer;
+
+font-size:17px;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#0F4C81;
+
+}
+
+footer{
+
+background:#0F4C81;
+
+color:white;
+
+text-align:center;
+
+padding:30px;
+
+margin-top:50px;
+
+}
+
+#gibi{
+
+display:none;
+
+}
+
+.gibi-container{
+
+max-width:900px;
+
+margin:auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 0 20px rgba(0,0,0,.15);
+
+text-align:center;
+
+}
+
+.gibi-container img{
+
+width:100%;
+
+max-width:700px;
+
+border-radius:15px;
+
+margin-top:20px;
+
+}
+
+.botoes{
+
+margin-top:20px;
+
+}
+
+#contador{
+
+margin:15px;
+
+font-weight:bold;
+
+font-size:18px;
+
+}
+
+.banner{
+
+margin-top:35px;
+
+}
+
+.banner button{
+
+margin-top:25px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>💧 Água Tratada</h1>
+
+<p>Saúde • Sustentabilidade • Qualidade de Vida</p>
+
+<div class="banner">
+
+<button onclick="mostrarTrabalhos()">
+
+Conheça nossos trabalhos
+
+</button>
+
+</div>
+
+</header>
+
+<nav>
+
+<a href="#curiosidades">Curiosidades</a>
+
+<a href="#trabalhosArea">Trabalhos</a>
+
+</nav>
+
+<section id="curiosidades">
+
+<h2 class="titulo">
+
+Curiosidades sobre a Água
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🌎 Apenas 3%</h3>
+
+<p>
+
+Somente cerca de 3% da água do planeta é doce e menos de 1% está disponível para consumo humano.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🚰 Água Tratada</h3>
+
+<p>
+
+Ela passa por processos de limpeza e desinfecção que eliminam vírus, bactérias e impurezas.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>💙 Saúde</h3>
+
+<p>
+
+Consumir água tratada reduz diversas doenças e melhora a qualidade de vida da população.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌱 Economia</h3>
+
+<p>
+
+Cada gota economizada ajuda a preservar rios, nascentes e o meio ambiente.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="trabalhosArea">
+
+<h2 class="titulo">
+
+📚 Nossos Trabalhos
+
+</h2>
+
+<div class="trabalhos">
+
+<div class="trabalho">
+
+<h2>📖 Gibi Educativo</h2>
+
+<p>
+
+Leia nosso gibi sobre a importância da água tratada.
+
+</p>
+
+<button onclick="abrirGibi()">
+
+Ler Gibi
+
+</button>
+
+</div>
+
+<div class="trabalho">
+
+<h2>🎥 Ciclo da Água (Stop Motion)</h2>
+
+<p>
+Assista ao nosso vídeo em Stop Motion e acompanhe de forma divertida todas as etapas do ciclo da água na natureza.
+</p>
+
+<button onclick="abrirVideo()">
+Assistir Vídeo
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- ÁREA DO GIBI -->
+
+<section id="gibi">
+
+<div class="gibi-container">
+
+<h2>📖 Gibi Educativo</h2>
+
+<p>
+Leia nosso gibi e descubra a importância da água tratada.
+</p>
+
+<img id="pagina" src="" alt="Página do Gibi">
+
+<div id="contador"></div>
+
+<div class="botoes">
+
+<button onclick="anterior()">⬅ Anterior</button>
+
+<button onclick="voltarInicio()">🏠 Voltar</button>
+
+<button onclick="proxima()">Próxima ➡</button>
+
+</div>
+
+</div>
+
+</section>
+<section id="video" style="display:none;">
+
+<div class="gibi-container">
+
+<h2>🎥 Ciclo da Água (Stop Motion)</h2>
+
+<p>
+Conheça o ciclo da água através de um vídeo produzido em Stop Motion.
+</p>
+
+<video width="100%" controls>
+    <source src="stopmotion.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos.
+</video>
+
+<br><br>
+
+<button onclick="voltarInicio()">🏠 Voltar</button>
+
+</div>
+
+</section>
+<footer>
+
+Projeto Agrinho 2026 • Água Tratada
+
+</footer>
+
+<script>
+
+const paginas = [
+
+"gibi_p1.png",
+"gibi_p2.png",
+"gibi_p3.png",
+"gibi_p4.png",
+"gibi_p5.png",
+"gibi_p6.png",
+"gibi_p7.png",
+"gibi_p8.png",
+"gibi_p9.png",
+"gibi_p10.png"
+
+];
+
+let atual = 0;
+
+function atualizar(){
+
+document.getElementById("pagina").src = paginas[atual];
+
+document.getElementById("contador").innerHTML =
+"Página " + (atual+1) + " de " + paginas.length;
+
+}
+
+function proxima(){
+
+if(atual < paginas.length-1){
+
+atual++;
+
+atualizar();
+
+}
+
+}
+
+function anterior(){
+
+if(atual>0){
+
+atual--;
+
+atualizar();
+
+}
+
+}
+function abrirVideo(){
+
+document.getElementById("curiosidades").style.display="none";
+
+document.getElementById("trabalhosArea").style.display="none";
+
+document.querySelector("header").style.display="none";
+
+document.querySelector("nav").style.display="none";
+
+document.getElementById("gibi").style.display="none";
+
+document.getElementById("video").style.display="block";
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+function abrirGibi(){
+
+document.getElementById("curiosidades").style.display="none";
+
+document.getElementById("trabalhosArea").style.display="none";
+
+document.querySelector("header").style.display="none";
+
+document.querySelector("nav").style.display="none";
+
+document.getElementById("gibi").style.display="block";
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+atualizar();
+
+}
+
+function voltarInicio(){
+
+document.getElementById("curiosidades").style.display="block";
+
+document.getElementById("trabalhosArea").style.display="block";
+
+document.querySelector("header").style.display="block";
+
+document.querySelector("nav").style.display="flex";
+
+document.getElementById("gibi").style.display="none";
+
+document.getElementById("video").style.display="none";
+  
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+function mostrarTrabalhos(){
+
+document.getElementById("trabalhosArea").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+window.onload=atualizar;
+
+</script>
+
+</body>
+
+</html>
