@@ -1,634 +1,739 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Projeto Agrinho 2026 - Água Tratada</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-
-background:#eef7ff;
-
-}
-
-header{
-
-background:linear-gradient(90deg,#0F4C81,#1E88E5);
-
-color:white;
-
-padding:50px 20px;
-
-text-align:center;
-
-}
-
-header h1{
-
-font-size:45px;
-
-margin-bottom:15px;
-
-}
-
-header p{
-
-font-size:20px;
-
-}
-
-nav{
-
-background:white;
-
-display:flex;
-
-justify-content:center;
-
-gap:25px;
-
-padding:18px;
-
-box-shadow:0 3px 10px rgba(0,0,0,.1);
-
-position:sticky;
-
-top:0;
-
-z-index:999;
-
-}
-
-nav a{
-
-text-decoration:none;
-
-color:#0F4C81;
-
-font-weight:bold;
-
-transition:.3s;
-
-}
-
-nav a:hover{
-
-color:#1E88E5;
-
-}
-
-section{
-
-max-width:1200px;
-
-margin:auto;
-
-padding:60px 20px;
-
-}
-
-.titulo{
-
-text-align:center;
-
-font-size:34px;
-
-margin-bottom:40px;
-
-color:#0F4C81;
-
-}
-
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-
-gap:25px;
-
-}
-
-.card{
-
-background:white;
-
-padding:25px;
-
-border-radius:18px;
-
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-transition:.3s;
-
-}
-
-.card:hover{
-
-transform:translateY(-8px);
-
-}
-
-.card h3{
-
-color:#1565C0;
-
-margin-bottom:15px;
-
-}
-
-.card p{
-
-line-height:1.6;
-
-}
-
-.trabalhos{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-gap:35px;
-
-}
-
-.trabalho{
-
-background:white;
-
-padding:30px;
-
-border-radius:20px;
-
-box-shadow:0 10px 20px rgba(0,0,0,.1);
-
-text-align:center;
-
-}
-
-.trabalho h2{
-
-color:#1565C0;
-
-margin-bottom:15px;
-
-}
-
-.trabalho p{
-
-margin-bottom:25px;
-
-}
-
-button{
-
-background:#1976D2;
-
-color:white;
-
-padding:14px 28px;
-
-border:none;
-
-border-radius:30px;
-
-cursor:pointer;
-
-font-size:17px;
-
-transition:.3s;
-
-}
-
-button:hover{
-
-background:#0F4C81;
-
-}
-
-footer{
-
-background:#0F4C81;
-
-color:white;
-
-text-align:center;
-
-padding:30px;
-
-margin-top:50px;
-
-}
-
-#gibi{
-
-display:none;
-
-}
-
-.gibi-container{
-
-max-width:900px;
-
-margin:auto;
-
-background:white;
-
-padding:30px;
-
-border-radius:20px;
-
-box-shadow:0 0 20px rgba(0,0,0,.15);
-
-text-align:center;
-
-}
-
-.gibi-container img{
-
-width:100%;
-
-max-width:700px;
-
-border-radius:15px;
-
-margin-top:20px;
-
-}
-
-.botoes{
-
-margin-top:20px;
-
-}
-
-#contador{
-
-margin:15px;
-
-font-weight:bold;
-
-font-size:18px;
-
-}
-
-.banner{
-
-margin-top:35px;
-
-}
-
-.banner button{
-
-margin-top:25px;
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Agrinho 2026 | Gestão Sustentável da Água</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0f4c81;
+            --secondary-color: #1e88e5;
+            --accent-color: #64b5f6;
+            --text-dark: #1a202c;
+            --text-light: #4a5568;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #0a365d);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--bg-light);
+            transform: skewY(-2deg);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Cards Curiosidades */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--secondary-color);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .info-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .click-hint {
+            font-size: 0.75rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 15px;
+            display: block;
+        }
+
+        /* Quiz Area */
+        #quiz-container {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quiz-question {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-option {
+            background: var(--bg-light);
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .quiz-option:hover {
+            background: #e2e8f0;
+            border-color: var(--accent-color);
+        }
+
+        .quiz-option.correct {
+            background: #c6f6d5;
+            border-color: #38a169;
+            color: #22543d;
+        }
+
+        .quiz-option.wrong {
+            background: #fed7d7;
+            border-color: #e53e3e;
+            color: #742a2a;
+        }
+
+        /* Minigame Area */
+        #game-section {
+            background: #e2e8f0;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        #game-canvas-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            background: #fff;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid var(--primary-color);
+            cursor: crosshair;
+        }
+
+        .game-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        /* Equipe Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .team-member {
+            background: var(--white);
+            padding: 2.5rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+        }
+
+        .team-member .avatar {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        /* Modals / Overlays */
+        .content-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .overlay-card {
+            background: var(--white);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .overlay-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .overlay-content p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .overlay-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .overlay-content li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 12px 32px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-
-<h1>💧 Água Tratada</h1>
-
-<p>Saúde • Sustentabilidade • Qualidade de Vida</p>
-
-<div class="banner">
-
-<button onclick="mostrarTrabalhos()">
-
-Conheça nossos trabalhos
-
-</button>
-
-</div>
-
-</header>
-
-<nav>
-
-<a href="#curiosidades">Curiosidades</a>
-
-<a href="#trabalhosArea">Trabalhos</a>
-
-</nav>
-
-<section id="curiosidades">
-
-<h2 class="titulo">
-
-Curiosidades sobre a Água
-
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>🌎 Apenas 3%</h3>
-
-<p>
-
-Somente cerca de 3% da água do planeta é doce e menos de 1% está disponível para consumo humano.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>🚰 Água Tratada</h3>
-
-<p>
-
-Ela passa por processos de limpeza e desinfecção que eliminam vírus, bactérias e impurezas.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>💙 Saúde</h3>
-
-<p>
-
-Consumir água tratada reduz diversas doenças e melhora a qualidade de vida da população.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>🌱 Economia</h3>
-
-<p>
-
-Cada gota economizada ajuda a preservar rios, nascentes e o meio ambiente.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="trabalhosArea">
-
-<h2 class="titulo">
-
-📚 Nossos Trabalhos
-
-</h2>
-
-<div class="trabalhos">
-
-<div class="trabalho">
-
-<h2>📖 Gibi Educativo</h2>
-
-<p>
-
-Leia nosso gibi sobre a importância da água tratada.
-
-</p>
-
-<button onclick="abrirGibi()">
-
-Ler Gibi
-
-</button>
-
-</div>
-
-<div class="trabalho">
-
-<h2>🎥 Ciclo da Água (Stop Motion)</h2>
-
-<p>
-Assista ao nosso vídeo em Stop Motion e acompanhe de forma divertida todas as etapas do ciclo da água na natureza.
-</p>
-
-<button onclick="abrirVideo()">
-Assistir Vídeo
-</button>
-
-</div>
-
-</div>
-
-</section>
-<!-- ÁREA DO GIBI -->
-
-<section id="gibi">
-
-<div class="gibi-container">
-
-<h2>📖 Gibi Educativo</h2>
-
-<p>
-Leia nosso gibi e descubra a importância da água tratada.
-</p>
-
-<img id="pagina" src="" alt="Página do Gibi">
-
-<div id="contador"></div>
-
-<div class="botoes">
-
-<button onclick="anterior()">⬅ Anterior</button>
-
-<button onclick="voltarInicio()">🏠 Voltar</button>
-
-<button onclick="proxima()">Próxima ➡</button>
-
-</div>
-
-</div>
-
-</section>
-<section id="video" style="display:none;">
-
-<div class="gibi-container">
-
-<h2>🎥 Ciclo da Água (Stop Motion)</h2>
-
-<p>
-Conheça o ciclo da água através de um vídeo produzido em Stop Motion.
-</p>
-
-<video width="100%" controls>
-    <source src="stopmotion.mp4" type="video/mp4">
-    Seu navegador não suporta vídeos.
-</video>
-
-<br><br>
-
-<button onclick="voltarInicio()">🏠 Voltar</button>
-
-</div>
-
-</section>
-<footer>
-
-Projeto Agrinho 2026 • Água Tratada
-
-</footer>
-
-<script>
-
-const paginas = [
-
-"gibi_p1.png",
-"gibi_p2.png",
-"gibi_p3.png",
-"gibi_p4.png",
-"gibi_p5.png",
-"gibi_p6.png",
-"gibi_p7.png",
-"gibi_p8.png",
-"gibi_p9.png",
-"gibi_p10.png"
-
-];
-
-let atual = 0;
-
-function atualizar(){
-
-document.getElementById("pagina").src = paginas[atual];
-
-document.getElementById("contador").innerHTML =
-"Página " + (atual+1) + " de " + paginas.length;
-
-}
-
-function proxima(){
-
-if(atual < paginas.length-1){
-
-atual++;
-
-atualizar();
-
-}
-
-}
-
-function anterior(){
-
-if(atual>0){
-
-atual--;
-
-atualizar();
-
-}
-
-}
-function abrirVideo(){
-
-document.getElementById("curiosidades").style.display="none";
-
-document.getElementById("trabalhosArea").style.display="none";
-
-document.querySelector("header").style.display="none";
-
-document.querySelector("nav").style.display="none";
-
-document.getElementById("gibi").style.display="none";
-
-document.getElementById("video").style.display="block";
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-}
-function abrirGibi(){
-
-document.getElementById("curiosidades").style.display="none";
-
-document.getElementById("trabalhosArea").style.display="none";
-
-document.querySelector("header").style.display="none";
-
-document.querySelector("nav").style.display="none";
-
-document.getElementById("gibi").style.display="block";
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-atualizar();
-
-}
-
-function voltarInicio(){
-
-document.getElementById("curiosidades").style.display="block";
-
-document.getElementById("trabalhosArea").style.display="block";
-
-document.querySelector("header").style.display="block";
-
-document.querySelector("nav").style.display="flex";
-
-document.getElementById("gibi").style.display="none";
-
-document.getElementById("video").style.display="none";
-  
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-}
-
-function mostrarTrabalhos(){
-
-document.getElementById("trabalhosArea").scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-}
-
-window.onload=atualizar;
-
-</script>
-
+    <header>
+        <h1>Preservação da Água</h1>
+        <p>Promovendo a conscientização sobre o uso racional e a importância do tratamento da água para um futuro sustentável.</p>
+        <button class="btn" onclick="scrollToSection('trabalhos')">Explorar Projetos</button>
+    </header>
+
+    <nav>
+        <a href="#curiosidades">Curiosidades</a>
+        <a href="#trabalhos">Projetos</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#game">Minigame</a>
+        <a href="#equipe">Equipe</a>
+    </nav>
+
+    <section id="curiosidades">
+        <h2 class="section-title">Fatos e Curiosidades</h2>
+        <div class="grid-container">
+            <div class="info-card" onclick="abrirCuriosidade('escassez')">
+                <h3>🌎 Escassez</h3>
+                <p>Apenas 3% da água da Terra é doce. Desse total, menos de 1% é acessível para o consumo humano direto.</p>
+                <span class="click-hint">Clique para saber mais →</span>
+            </div>
+            <div class="info-card" onclick="abrirCuriosidade('tratamento')">
+                <h3>🚰 Tratamento</h3>
+                <p>O tratamento de água elimina microrganismos patogênicos, garantindo segurança hídrica e saúde pública.</p>
+                <span class="click-hint">Clique para saber mais →</span>
+            </div>
+            <div class="info-card" onclick="abrirCuriosidade('saude')">
+                <h3>💙 Saúde Pública</h3>
+                <p>Para cada R$ 1,00 investido em saneamento e água tratada, economiza-se R$ 4,00 em gastos com saúde.</p>
+                <span class="click-hint">Clique para saber mais →</span>
+            </div>
+            <div class="info-card" onclick="abrirCuriosidade('sustentabilidade')">
+                <h3>🌱 Sustentabilidade</h3>
+                <p>A gestão eficiente da água é fundamental para a preservação da biodiversidade e segurança alimentar.</p>
+                <span class="click-hint">Clique para saber mais →</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overlay Curiosidades Detalhadas -->
+    <div id="curiosidade-overlay" class="content-overlay">
+        <div class="overlay-card">
+            <span class="close-btn" onclick="fecharOverlay('curiosidade-overlay')">&times;</span>
+            <div id="curiosidade-detalhe" class="overlay-content">
+                <!-- Conteúdo dinâmico aqui -->
+            </div>
+        </div>
+    </div>
+
+    <section id="trabalhos">
+        <h2 class="section-title">Iniciativas Educativas</h2>
+        <div class="grid-container">
+            <div class="info-card" style="text-align: center;">
+                <h3>📖 Gibi Digital</h3>
+                <p>Uma abordagem lúdica sobre o ciclo da água e sua importância.</p>
+                <br>
+                <button class="btn btn-outline" onclick="abrirGibi()">Acessar Gibi</button>
+            </div>
+            <div class="info-card" style="text-align: center;">
+                <h3>🎥 Produção Audiovisual</h3>
+                <p>Animação em Stop Motion demonstrando o ciclo hidrológico.</p>
+                <br>
+                <button class="btn btn-outline" onclick="abrirVideo()">Assistir Vídeo</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz">
+        <h2 class="section-title">Quiz da Água</h2>
+        <div id="quiz-container">
+            <div id="quiz-start">
+                <p style="text-align: center; margin-bottom: 20px;">Teste seus conhecimentos com 7 perguntas sobre a importância da água e sustentabilidade!</p>
+                <div style="text-align: center;">
+                    <button class="btn" onclick="startQuiz()">Começar Quiz</button>
+                </div>
+            </div>
+            <div id="quiz-box" style="display: none;">
+                <div class="quiz-progress">Pergunta <span id="q-current">1</span> de 7</div>
+                <div class="quiz-question" id="q-text">Texto da Pergunta</div>
+                <div class="quiz-options" id="q-options"></div>
+            </div>
+            <div id="quiz-result" class="quiz-result" style="display: none;">
+                <h3 id="res-title">Fim do Quiz!</h3>
+                <p id="res-score" style="font-size: 1.5rem; margin: 20px 0;"></p>
+                <button class="btn" onclick="startQuiz()">Tentar Novamente</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="game">
+        <h2 class="section-title">Minigame: Faxina Hídrica</h2>
+        <div id="game-section">
+            <div class="game-stats">
+                <span>Lixo Removido: <span id="score">0</span></span>
+                <span>Nível: <span id="game-level">1</span></span>
+                <span>Pureza: <span id="purity-level">100</span>%</span>
+            </div>
+            <div id="game-canvas-container">
+                <div id="level-indicator" style="color: #e53e3e; font-weight: 800; display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; pointer-events: none; z-index: 10;">NÍVEL UP!</div>
+                <canvas id="gameCanvas"></canvas>
+            </div>
+            <button class="btn" id="start-game-btn" onclick="startGame()">Iniciar Limpeza</button>
+        </div>
+    </section>
+
+    <section id="equipe">
+        <h2 class="section-title">Criadores do Projeto</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="avatar">P</div>
+                <h4>Phietro Emanuel</h4>
+                <span class="role">A Mente</span>
+                <p class="description">Idealizador do projeto, responsável pela visão geral e pela estrutura criativa do site.</p>
+            </div>
+            <div class="team-member">
+                <div class="avatar">L</div>
+                <h4>Luiz Fernando</h4>
+                <span class="role">Pesquisador Chefe</span>
+                <p class="description">Responsável pela coleta de dados e fatos científicos sobre o tratamento da água.</p>
+            </div>
+            <div class="team-member">
+                <div class="avatar">V</div>
+                <h4>Vitor Andrioli</h4>
+                <span class="role">Pesquisador & Conteúdo</span>
+                <p class="description">Ajudou no desenvolvimento das curiosidades e na organização dos textos educativos.</p>
+            </div>
+            <div class="team-member">
+                <div class="avatar">J</div>
+                <h4>João Victor</h4>
+                <span class="role">Pesquisador & Estrategista</span>
+                <p class="description">Contribuiu com ideias fundamentais para as mecânicas do minigame e fluxo do site.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Projeto Agrinho | Compromisso com a Educação e Sustentabilidade</p>
+    </footer>
+
+    <!-- Overlays Adicionais (Gibi e Video) -->
+    <div id="gibi-overlay" class="content-overlay">
+        <div class="overlay-card">
+            <span class="close-btn" onclick="fecharOverlay('gibi-overlay')">&times;</span>
+            <h2 style="text-align: center; color: var(--primary-color);">Gibi Educativo</h2>
+            <img id="pagina" src="" alt="Página do Gibi" style="width:100%; max-width:700px; display:block; margin:20px auto; border-radius:8px;">
+            <p id="contador" style="text-align: center; font-weight: 600; margin: 10px 0;"></p>
+            <div style="display:flex; justify-content:center; gap:1rem; margin-top:20px;">
+                <button class="btn" onclick="anterior()">Anterior</button>
+                <button class="btn" onclick="proxima()">Próxima</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="video-overlay" class="content-overlay">
+        <div class="overlay-card">
+            <span class="close-btn" onclick="fecharOverlay('video-overlay')">&times;</span>
+            <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">Ciclo da Água - Stop Motion</h2>
+            <video width="100%" controls style="border-radius: 8px;">
+                <source src="stopmotion.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
+
+        // --- Curiosidades Detalhadas Logic ---
+        const detalhesCuriosidades = {
+            escassez: {
+                titulo: "A Realidade da Água Doce 🌎",
+                conteudo: `
+                    <p>Embora a Terra seja conhecida como o "Planeta Azul", a maior parte da água é salgada (97%). Dos 3% de água doce:</p>
+                    <ul>
+                        <li><b>68.7%</b> estão presos em geleiras e calotas polares.</li>
+                        <li><b>30.1%</b> são águas subterrâneas (aquíferos).</li>
+                        <li><b>Apenas 1.2%</b> é água superficial em rios e lagos.</li>
+                    </ul>
+                    <p>Isso significa que a água disponível para o consumo humano é um recurso extremamente raro e precioso que deve ser protegido a todo custo.</p>
+                `
+            },
+            tratamento: {
+                titulo: "Como funciona o Tratamento? 🚰",
+                conteudo: `
+                    <p>O tratamento de água é um processo complexo que envolve várias etapas para garantir que a água chegue limpa às nossas torneiras:</p>
+                    <ul>
+                        <li><b>Coagulação e Floculação:</b> Adição de substâncias que fazem a sujeira se agrupar.</li>
+                        <li><b>Decantação:</b> A sujeira pesada vai para o fundo do tanque.</li>
+                        <li><b>Filtração:</b> A água passa por camadas de areia, carvão e cascalho.</li>
+                        <li><b>Desinfecção:</b> Adição de cloro ou ozônio para matar bactérias e vírus.</li>
+                        <li><b>Fluoretação:</b> Adição de flúor para ajudar a prevenir cáries na população.</li>
+                    </ul>
+                `
+            },
+            saude: {
+                titulo: "Água é Saúde Pública 💙",
+                conteudo: `
+                    <p>O acesso à água tratada e ao saneamento básico é o principal pilar da medicina preventiva:</p>
+                    <ul>
+                        <li><b>Redução de Doenças:</b> Diminui drasticamente casos de cólera, disenteria, hepatite A e leptospirose.</li>
+                        <li><b>Desenvolvimento Infantil:</b> Crianças com acesso a água limpa têm melhor desenvolvimento físico e cognitivo.</li>
+                        <li><b>Economia:</b> A Organização Mundial da Saúde (OMS) confirma que cada real investido em saneamento gera uma economia de 4 reais no sistema público de saúde.</li>
+                    </ul>
+                `
+            },
+            sustentabilidade: {
+                titulo: "O Futuro Sustentável 🌱",
+                conteudo: `
+                    <p>Preservar a água hoje garante a sobrevivência das gerações futuras. Atitudes simples fazem a diferença:</p>
+                    <ul>
+                        <li><b>Reuso:</b> Aproveitar a água da chuva para regar plantas ou lavar calçadas.</li>
+                        <li><b>Consumo Consciente:</b> Reduzir o tempo de banho e consertar vazamentos imediatamente.</li>
+                        <li><b>Preservação de Matas Ciliares:</b> Proteger a vegetação ao redor dos rios para evitar o assoreamento e manter a qualidade da água.</li>
+                        <li><b>Não Poluir:</b> Jamais descartar óleo de cozinha, remédios ou lixo no ralo ou no vaso sanitário.</li>
+                    </ul>
+                `
+            }
+        };
+
+        function abrirCuriosidade(key) {
+            const detalhe = detalhesCuriosidades[key];
+            const container = document.getElementById('curiosidade-detalhe');
+            container.innerHTML = `<h2>${detalhe.titulo}</h2>${detalhe.conteudo}`;
+            document.getElementById('curiosidade-overlay').style.display = 'block';
+        }
+
+        function fecharOverlay(id) { document.getElementById(id).style.display = 'none'; }
+
+        // --- Quiz Logic ---
+        const quizData = [
+            { q: "Qual a porcentagem de água doce no planeta?", a: ["3%", "10%", "50%", "97%"], c: 0 },
+            { q: "O que o tratamento de água elimina?", a: ["Apenas areia", "Micro-organismos patogênicos", "O sal da água", "Nada"], c: 1 },
+            { q: "Qual a principal causa da poluição dos rios?", a: ["Peixes", "Chuva", "Esgoto e lixo descartado incorretamente", "Evaporação"], c: 2 },
+            { q: "Quanto se economiza em saúde para cada R$ 1 investido em saneamento?", a: ["R$ 1", "R$ 2", "R$ 4", "R$ 10"], c: 2 },
+            { q: "Qual atitude ajuda a preservar a água?", a: ["Demorar no banho", "Lavar calçada com mangueira", "Fechar a torneira ao escovar os dentes", "Deixar vazamentos"], c: 2 },
+            { q: "Onde está a maior parte da água doce acessível?", a: ["Oceanos", "Nuvens", "Aquíferos e rios", "Geleiras"], c: 2 },
+            { q: "Qual o objetivo do Projeto Agrinho 2026?", a: ["Gastar água", "Sustentabilidade e Educação", "Apenas brincar", "Pescar"], c: 1 }
+        ];
+        let currentQ = 0, quizScore = 0;
+        function startQuiz() {
+            currentQ = 0; quizScore = 0;
+            document.getElementById('quiz-start').style.display = 'none';
+            document.getElementById('quiz-result').style.display = 'none';
+            document.getElementById('quiz-box').style.display = 'block';
+            showQuestion();
+        }
+        function showQuestion() {
+            const q = quizData[currentQ];
+            document.getElementById('q-current').innerText = currentQ + 1;
+            document.getElementById('q-text').innerText = q.q;
+            const optionsDiv = document.getElementById('q-options');
+            optionsDiv.innerHTML = '';
+            q.a.forEach((opt, i) => {
+                const div = document.createElement('div');
+                div.className = 'quiz-option';
+                div.innerText = opt;
+                div.onclick = () => checkAnswer(i);
+                optionsDiv.appendChild(div);
+            });
+        }
+        function checkAnswer(idx) {
+            const correct = quizData[currentQ].c;
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach(opt => opt.onclick = null);
+            if (idx === correct) { options[idx].classList.add('correct'); quizScore++; }
+            else { options[idx].classList.add('wrong'); options[correct].classList.add('correct'); }
+            setTimeout(() => {
+                currentQ++;
+                if (currentQ < quizData.length) showQuestion();
+                else showResult();
+            }, 1500);
+        }
+        function showResult() {
+            document.getElementById('quiz-box').style.display = 'none';
+            document.getElementById('quiz-result').style.display = 'block';
+            document.getElementById('res-score').innerText = `Você acertou ${quizScore} de 7 perguntas!`;
+        }
+
+        // --- Gibi Logic ---
+        const paginas = ["gibi_p1.png", "gibi_p2.png", "gibi_p3.png", "gibi_p4.png", "gibi_p5.png", "gibi_p6.png", "gibi_p7.png", "gibi_p8.png", "gibi_p9.png", "gibi_p10.png"];
+        let paginaAtual = 0;
+        function atualizarGibi() { document.getElementById("pagina").src = paginas[paginaAtual]; document.getElementById("contador").innerText = `Página ${paginaAtual + 1} de ${paginas.length}`; }
+        function proxima() { if (paginaAtual < paginas.length - 1) { paginaAtual++; atualizarGibi(); } }
+        function anterior() { if (paginaAtual > 0) { paginaAtual--; atualizarGibi(); } }
+        function abrirGibi() { document.getElementById('gibi-overlay').style.display = 'block'; atualizarGibi(); }
+        function abrirVideo() { document.getElementById('video-overlay').style.display = 'block'; }
+
+        // --- Minigame Logic ---
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        let score = 0, purity = 100, gameActive = false, trashItems = [], spawnRate = 1500, lastSpawn = 0, gameLevel = 1, lastLevelUpdate = 0;
+        const trashIcons = ["🧴", "🔋", "🥤", "🛍️", "🥫", "🚬"];
+        function resizeCanvas() { const container = document.getElementById('game-canvas-container'); canvas.width = container.clientWidth; canvas.height = container.clientHeight; }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        class Trash {
+            constructor(level) {
+                this.x = Math.random() * (canvas.width - 60) + 30;
+                this.y = Math.random() * (canvas.height - 60) + 30;
+                this.icon = trashIcons[Math.floor(Math.random() * trashIcons.length)];
+                this.size = 30;
+                this.spawnTime = Date.now();
+                this.lifeSpan = Math.max(1500, 4000 - (level * 300)); 
+            }
+            draw() {
+                ctx.save();
+                ctx.font = `${this.size}px Arial`;
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText(this.icon, this.x, this.y);
+                const elapsed = Date.now() - this.spawnTime;
+                const ratio = elapsed / this.lifeSpan;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2 * ratio);
+                ctx.strokeStyle = ratio > 0.7 ? "red" : "orange";
+                ctx.lineWidth = 4;
+                ctx.stroke();
+                ctx.restore();
+            }
+            update() { return (Date.now() - this.spawnTime) > this.lifeSpan; }
+        }
+        function startGame() {
+            score = 0; purity = 100; gameLevel = 1; trashItems = []; spawnRate = 1500; gameActive = true;
+            lastLevelUpdate = Date.now();
+            document.getElementById('start-game-btn').style.display = 'none';
+            updateStats();
+            gameLoop();
+        }
+        function updateStats() {
+            document.getElementById('score').innerText = score;
+            document.getElementById('purity-level').innerText = Math.max(0, Math.floor(purity));
+            document.getElementById('game-level').innerText = gameLevel;
+            canvas.style.backgroundColor = `rgb(${255 - (purity * 2.55)}, ${purity * 2.55}, 255)`;
+        }
+        function gameLoop(timestamp) {
+            if (!gameActive) return;
+            const now = Date.now();
+            if (now - lastLevelUpdate > 10000) {
+                gameLevel++; spawnRate = Math.max(300, spawnRate * 0.8); lastLevelUpdate = now;
+                const indicator = document.getElementById('level-indicator');
+                indicator.style.display = 'block'; setTimeout(() => indicator.style.display = 'none', 1000);
+            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = `rgba(0, 100, 255, ${purity/200 + 0.1})`;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            if (timestamp - lastSpawn > spawnRate) { trashItems.push(new Trash(gameLevel)); lastSpawn = timestamp; }
+            trashItems.forEach((item, index) => {
+                item.draw();
+                if (item.update()) { purity -= (5 + gameLevel); trashItems.splice(index, 1); }
+            });
+            purity -= 0.02 * gameLevel;
+            updateStats();
+            if (purity <= 0) endGame();
+            else requestAnimationFrame(gameLoop);
+        }
+        function endGame() {
+            gameActive = false;
+            ctx.fillStyle = "rgba(0,0,0,0.8)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "white";
+            ctx.font = "bold 36px Inter";
+            ctx.textAlign = "center";
+            ctx.fillText("O Rio foi Poluído!", canvas.width / 2, canvas.height / 2 - 20);
+            document.getElementById('start-game-btn').style.display = 'inline-block';
+        }
+        canvas.addEventListener('mousedown', function(e) {
+            if (!gameActive) return;
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+            trashItems.forEach((item, index) => {
+                const dist = Math.sqrt((mouseX - item.x)**2 + (mouseY - item.y)**2);
+                if (dist < item.size + 15) { trashItems.splice(index, 1); score += 1; purity = Math.min(100, purity + 2); }
+            });
+        });
+    </script>
 </body>
-
 </html>
